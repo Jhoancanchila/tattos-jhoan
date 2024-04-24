@@ -1,9 +1,11 @@
+import { Fragment } from "react";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
   return (
-    <div>
-      tattos
-    </div>
+    <Fragment>
+      <Sidebar/>
+    </Fragment>
   );
 }
 
