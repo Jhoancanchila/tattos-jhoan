@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { Fragment, useState } from 'react'
+import Modal from './Modal'
 
 const Footer = () => {
+
+  const [ openModal, setOpenModal ] = useState(false);
   return (
-    <footer className="bg-white">
+    <Fragment>
+      <footer className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8 lg:pt-24">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-5xl">Agenda tú cita con nosotros</h2>
@@ -11,12 +15,12 @@ const Footer = () => {
             Si quieres experimentar el verdadero arte a través de la tinta, si aún tienes dudas sobre nuestro servicio te invitamos a ponerte en contacto con nosotros por medio de nuestro formulario de contacto.
           </p>
 
-          <a
-            href="#"
-            className="mt-8 inline-block rounded-full border border-pink-600 px-12 py-3 text-sm font-medium text-pink-600 hover:bg-pink-600 hover:text-white focus:outline-none focus:ring active:bg-pink-500"
+          <button
+            className="mt-8 inline-block rounded-full border border-pink-600 px-12 py-3 text-sm font-medium text-pink-600 hover:bg-pink-600 hover:text-white focus:outline-none focus:ring active:bg-pink-500 cursor-pointer"
+            onClick={() => setOpenModal(true)}
           >
             Agendar cita
-          </a>
+          </button>
           
         </div>
 
@@ -107,7 +111,11 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-    </footer>
+      </footer>
+      <Modal isOpen={openModal} onClose={setOpenModal}>
+
+      </Modal>
+    </Fragment>
   )
 }
 
