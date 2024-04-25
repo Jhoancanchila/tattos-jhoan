@@ -4,6 +4,7 @@ import Modal from './Modal'
 const Footer = () => {
 
   const [ openModal, setOpenModal ] = useState(false);
+  
   return (
     <Fragment>
       <footer className="bg-white">
