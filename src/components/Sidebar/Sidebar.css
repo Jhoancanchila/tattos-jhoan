@@ -46,7 +46,7 @@ ul {
 /* Media Query for Responsive behavior of the Navbar */
 @media only screen and (max-width: 600px) {
   nav{
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .menu-icon {
     display: block;
