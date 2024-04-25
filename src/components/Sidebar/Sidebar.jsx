@@ -9,11 +9,9 @@ const Sidebar = () => {
         </svg>
       </a>
       <ul>
-        <li><a href="#" className="link">Store</a></li>
-        <li><a href="#" className="link">Mac</a></li>
-        <li><a href="#" className="link">iPad</a></li>
-        <li><a href="#" className="link">iPhone</a></li>
-        <li><a href="#" className="link">Watch</a></li>
+        <li><a href="#" className="link">Nosotros</a></li>
+        <li><a href="#" className="link">Testimonios</a></li>
+        <li><a href="#" className="link">Contacto</a></li>
       </ul>
       <button className="menu-icon">
         <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

@@ -1,25 +1,29 @@
-import React from 'react'
+import bannerVideo from "../assets/tattos.mp4"
 
 const CTA = () => {
   return (
-    <section section
-      className="overflow-hidden bg-[url(https://images.unsplash.com/photo-1562157873-818bc0726f68?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=654&q=80)] bg-cover bg-top bg-no-repeat"
+    <section
+      className="relative bg-cover bg-center bg-no-repeat mt-12 h-screen overflow-hidden"
     >
-      <div className="bg-black/25 p-8 md:p-12 lg:px-16 lg:py-24">
+      <video autoPlay muted loop playsinline className="absolute object-cover top-0 left-0 w-full h-full">
+        <source src={bannerVideo} type="video/mp4"/>
+      </video>
+      <div
+        className="relative z-10 h-full w-full bg-black/25 mx-auto max-w-screen px-4 py-32 sm:px-6 lg:flex lg:items-center lg:px-8"
+      >
         <div className="ltr:sm:text-left rtl:sm:text-right">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-5xl">Latest Shirts</h2>
+          <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-5xl">Pregunta por nuestro servicio!</h2>
 
           <p className="hidden max-w-lg text-white/90 md:mt-6 md:block md:text-lg md:leading-relaxed">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore officia corporis quasi
-            doloribus iure architecto quae voluptatum beatae excepturi dolores.
+            ¿Estás listo para darle vida a tu próximo tatuaje? En tattos Julia, creemos en la magia de cada diseño y en cómo cada tatuaje puede contar una historia única. No esperes más, ¡haz clic en el botón de abajo y descubre cómo podemos ayudarte a crear tu tatuaje perfecto!
           </p>
 
           <div className="mt-4 sm:mt-8">
             <a
               href="#"
-              className="inline-block rounded-full bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400"
+              className="inline-block rounded-full bg-[#E11D48] opacity-[0.9] px-12 py-3 text-sm font-medium text-white transition hover:bg-[#E11D48] hover:opacity-[1] focus:outline-none focus:ring focus:ring-yellow-400"
             >
-              Get Yours Today
+              Obtener información
             </a>
           </div>
         </div>

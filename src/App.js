@@ -1,12 +1,19 @@
 import { Fragment } from "react";
-import Sidebar from "./components/Sidebar/Sidebar";
-import CTA from "./components/CTA";
+import Layout from "./components/Layout";
+import About from "./components/About";
+import Testimonial from "./components/Testimonial";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <Fragment>
-      <Sidebar/>
-      <CTA/>
+      <Layout>
+        <About/>
+        <Testimonial/>
+        <Contact/>
+        <Footer/>
+      </Layout>
     </Fragment>
   );
 }
