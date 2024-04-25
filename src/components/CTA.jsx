@@ -21,7 +21,7 @@ const CTA = () => {
           <div className="mt-4 sm:mt-8">
             <a
               href="#"
-              className="inline-block rounded-full bg-[#E11D48] opacity-[0.9] px-12 py-3 text-sm font-medium text-white transition hover:bg-[#E11D48] hover:opacity-[1] focus:outline-none focus:ring focus:ring-yellow-400"
+              className="inline-block rounded-full bg-[#E11D48] opacity-[0.9] px-12 py-3 text-sm font-medium text-white transition hover:bg-[#E11D48] hover:opacity-[1] focus:outline-none"
             >
               Obtener información
             </a>

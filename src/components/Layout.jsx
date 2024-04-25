@@ -5,8 +5,6 @@ import CTA from './CTA'
 const Layout = ({children}) => {
   return (
     <Fragment>
-      <Sidebar/>
-      <CTA/>
       <div>
         {
           children

@@ -1,10 +1,14 @@
 import tribal from "../assets/tribal.webp";
 import realista from "../assets/realista.avif";
 import neotradicional from "../assets/neotradicional.avif";
+import { handleScroll } from "../helpers";
+import { useReference } from "../context/ref";
 
-const Description = () => {
+const Description = ({ sectionRef }) => {
+
+  const { sectionRefContact } = useReference();
   return (
-    <section>
+    <section ref={sectionRef}>
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <header className="text-center">
             <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
@@ -21,7 +25,7 @@ const Description = () => {
 
         <ul className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3">
           <li>
-            <a href="#" className="group relative block">
+            <span className="group relative block">
               <img
                 src={realista}
                 alt="realista"
@@ -31,17 +35,18 @@ const Description = () => {
               <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
                 <h3 className="text-xl font-medium text-white">Realistas</h3>
 
-                <span
+                <button
+                  onClick={() => handleScroll(sectionRefContact)}
                   className="mt-1.5 inline-block bg-[#272425] px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
                 >
                   Contáctanos
-                </span>
+                </button>
               </div>
-            </a>
+            </span>
           </li>
 
           <li>
-            <a href="#" className="group relative block">
+            <span className="group relative block">
               <img
                 src={tribal}
                 alt="tribal"
@@ -51,17 +56,18 @@ const Description = () => {
               <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
                 <h3 className="text-xl font-medium text-white">Tribales</h3>
 
-                <span
+                <button
+                  onClick={() => handleScroll(sectionRefContact)}
                   className="mt-1.5 inline-block bg-[#272425] px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
                 >
                   Contáctanos
-                </span>
+                </button>
               </div>
-            </a>
+            </span>
           </li>
 
           <li className="lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
-            <a href="#" className="group relative block">
+            <span className="group relative block">
               <img
                 src={neotradicional}
                 alt="neotradicional"
@@ -71,13 +77,14 @@ const Description = () => {
               <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
                 <h3 className="text-xl font-medium text-white">Neotradicionales</h3>
 
-                <span
+                <button
+                  onClick={() => handleScroll(sectionRefContact)}
                   className="mt-1.5 inline-block bg-[#272425] px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
                 >
                   Contáctanos
-                </span>
+                </button>
               </div>
-            </a>
+            </span>
           </li>
         </ul>
       </div>

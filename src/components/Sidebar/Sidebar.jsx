@@ -1,21 +1,30 @@
 import { Fragment, useState } from "react";
 import "./Sidebar.css";
 import Modal from "../Modal";
+import { useReference } from "../../context/ref";
+import { handleScroll } from "../../helpers";
 
 const Sidebar = () => {
 
   const [ openModal, setOpenModal ] = useState(false);
+  const [ itemSelected, setItemSelected ] = useState("");
+  const { sectionRefAbout, sectionRefTest, sectionRefContact } = useReference();
+
+  const handleMenu = ( selection, ref ) => {
+    handleScroll(ref);
+    setItemSelected(selection);
+  };
 
   return (
     <Fragment>
       <nav>
-        <a href="/" className="logo -rotate-6">
+        <span className="logo -rotate-6">
           <span className="italic font-bold text-white text-4xl ">tattos julia</span>
-        </a>
+        </span>
         <ul>
-          <li><a href="#" className="link">Nosotros</a></li>
-          <li><a href="#" className="link">Testimonios</a></li>
-          <li><a href="#" className="link">Contacto</a></li>
+          <li onClick={() => handleMenu("ABOUT", sectionRefAbout)}><span className="link cursor-pointer">Nosotros</span></li>
+          <li onClick={() => handleMenu("TESTIMONIALS",sectionRefTest)}><span className="link cursor-pointer">Testimonios</span></li>
+          <li onClick={() => handleMenu("CONTACT",sectionRefContact)}><span className="link cursor-pointer">Contacto</span></li>
           <li>
             <button
               onClick={() => setOpenModal(true)}

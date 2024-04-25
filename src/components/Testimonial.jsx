@@ -1,7 +1,7 @@
 
-const Testimonial = () => {
+const Testimonial = ({ sectionRef }) => {
   return (
-    <section className="bg-gray-50">
+    <section ref={sectionRef} className="bg-gray-50">
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8 lg:py-16">
         <div className="md:flex md:items-end md:justify-between">
           <div className="max-w-xl">

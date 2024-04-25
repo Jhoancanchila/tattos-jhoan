@@ -1,10 +1,11 @@
 import React, { Fragment, useState } from 'react'
 import Modal from './Modal'
+import { ScrollButton } from './ButtonScroll/ScrollButton';
 
 const Footer = () => {
 
   const [ openModal, setOpenModal ] = useState(false);
-  
+
   return (
     <Fragment>
       <footer className="bg-white">
@@ -17,7 +18,7 @@ const Footer = () => {
           </p>
 
           <button
-            className="mt-8 inline-block rounded-full border border-pink-600 px-12 py-3 text-sm font-medium text-pink-600 hover:bg-pink-600 hover:text-white focus:outline-none focus:ring active:bg-pink-500 cursor-pointer"
+            className="mt-8 inline-block rounded-full border border-pink-600 px-12 py-3 text-sm font-medium text-pink-600 hover:bg-pink-600 hover:text-white focus:outline-none cursor-pointer"
             onClick={() => setOpenModal(true)}
           >
             Agendar cita
@@ -112,6 +113,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+      <ScrollButton/>
       </footer>
       <Modal isOpen={openModal} onClose={setOpenModal}>
 
