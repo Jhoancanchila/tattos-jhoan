@@ -34,7 +34,8 @@ ul {
 
 .logo {
   width: 24px;
-  height: 24px;
+  height: 50px;
+  text-align: center;
 }
 
 .menu-icon {
@@ -44,7 +45,7 @@ ul {
 }
 
 /* Media Query for Responsive behavior of the Navbar */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 760px) {
   nav{
     justify-content: space-between;
   }
@@ -56,6 +57,7 @@ ul {
     display: none;
   }
 }
+
 
 /* Link and Logo Hover Effects */
 .link::before {
