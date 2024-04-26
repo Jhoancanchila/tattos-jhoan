@@ -15,7 +15,7 @@ const Contact = ({ sectionRef }) => {
             </p>
 
             <div className="mt-8">
-              <a href="#" className="text-2xl font-bold text-[#E11D48]"> 605-8580967 </a>
+              <span className="text-2xl font-bold text-[#E11D48]"> 313 2623933 </span>
               <address className="mt-2 not-italic">Cra 22 # 58 - 06 Corozal - Sucre</address>
             </div>
           </div>
