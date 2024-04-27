@@ -1,4 +1,5 @@
-import React from 'react'
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+
 
 const Contact = ({ sectionRef }) => {
   return (
@@ -21,59 +22,97 @@ const Contact = ({ sectionRef }) => {
           </div>
 
           <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
-            <form action="#" className="space-y-4">
-              <div>
-                <label className="sr-only" htmlFor="name">Nombre</label>
-                <input
-                  className="w-full rounded-lg border border-gray-200 p-3 text-sm"
-                  placeholder="Nombre"
-                  type="text"
-                  id="name"
-                />
-              </div>
+            <Formik
+              initialValues={{ name: '', email: '', phone:'', message: '' }}
+              validate={values => {
+                const errors = {};
+                if (!values.name) {
+                  errors.name = 'Este campo es requerido';
+                }else if (!values.email) {
+                  errors.email = 'Este campo es requerido';
+                } else if (
+                  !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+                ) {
+                  errors.email = 'Dirección de correo invalida';
+                }else if (!values.phone) {
+                  errors.phone = 'Este campo es requerido';
+                }else if (!values.message) {
+                  errors.message = 'Este campo es requerido';
+                }
+                return errors;
+              }}
+              onSubmit={(values, { setSubmitting }) => {
+                console.log(values)
+              }}
+            >
+              {
+                ({isSubmitting, errors}) => (
+                  <Form action="#" className="space-y-4">
+                    <div>
+                      <label className="sr-only" htmlFor="name">Nombre</label>
+                      <Field
+                        className="w-full rounded-lg border border-gray-200 p-3 text-sm"
+                        placeholder="Nombre"
+                        type="text"
+                        id="name"
+                        name="name"
+                      />
+                      <ErrorMessage name="name" component={() => (<span className='text-red-600 font-normal'>{errors.name}</span>)} />
+                    </div>
 
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="sr-only" htmlFor="email">Email</label>
-                  <input
-                    className="w-full rounded-lg border border-gray-200 p-3 text-sm"
-                    placeholder="Email"
-                    type="email"
-                    id="email"
-                  />
-                </div>
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                      <div>
+                        <label className="sr-only" htmlFor="email">Email</label>
+                        <Field
+                          className="w-full rounded-lg border border-gray-200 p-3 text-sm"
+                          placeholder="Email"
+                          type="email"
+                          id="email"
+                          name="email"
+                        />
+                        <ErrorMessage name="email" component={() => (<span className='text-red-600 font-normal'>{errors.email}</span>)} />
+                      </div>
 
-                <div>
-                  <label className="sr-only" htmlFor="phone">Celular</label>
-                  <input
-                    className="w-full rounded-lg border border-gray-200 p-3 text-sm"
-                    placeholder="Celular"
-                    type="number"
-                    id="phone"
-                  />
-                </div>
-              </div>
+                      <div>
+                        <label className="sr-only" htmlFor="phone">Celular</label>
+                        <Field
+                          className="w-full rounded-lg border border-gray-200 p-3 text-sm"
+                          placeholder="Celular"
+                          type="number"
+                          id="phone"
+                          name="phone"
+                        />
+                        <ErrorMessage name="phone" component={() => (<span className='text-red-600 font-normal'>{errors.phone}</span>)} />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="sr-only" htmlFor="message">¿En qué podemos ayudarte?</label>
 
-              <div>
-                <label className="sr-only" htmlFor="message">¿En qué podemos ayudarte?</label>
+                      <Field
+                        as="textarea"
+                        className="w-full rounded-lg border border-gray-200 p-3 text-sm"
+                        placeholder="¿En qué podemos ayudarte?"
+                        rows="8"
+                        id="message"
+                        name="message"
+                        maxLength={480}
+                      />
+                      <ErrorMessage name="message" component={() => (<span className='text-red-600 font-normal'>{errors.message}</span>)} />
+                    </div>
 
-                <textarea
-                  className="w-full rounded-lg border border-gray-200 p-3 text-sm"
-                  placeholder="¿En qué podemos ayudarte?"
-                  rows="8"
-                  id="message"
-                ></textarea>
-              </div>
-
-              <div className="mt-4">
-                <button
-                  type="submit"
-                  className="inline-block w-auto rounded-lg bg-[#272425] px-5 py-3 font-medium text-white sm:w-auto"
-                >
-                  Enviar
-                </button>
-              </div>
-            </form>
+                    <div className="mt-4">
+                      <button
+                        disabled={isSubmitting}
+                        type="submit"
+                        className="cursor-pointer inline-block w-auto rounded-lg bg-[#272425] px-5 py-3 font-medium text-white sm:w-auto"
+                      >
+                        Enviar
+                      </button>
+                    </div>
+                  </Form>
+                )
+              }
+            </Formik>
           </div>
         </div>
       </div>

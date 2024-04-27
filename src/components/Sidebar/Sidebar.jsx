@@ -19,7 +19,7 @@ const Sidebar = () => {
     <Fragment>
       <nav>
         <span className="logo -rotate-6">
-          <span className="italic font-bold text-white text-4xl ">tattos julia</span>
+          <span className="italic font-bold text-white text-4xl ">tattos <span>julia</span></span>
         </span>
         <ul>
           <li onClick={() => handleMenu("ABOUT", sectionRefAbout)}><span className="link cursor-pointer">Nosotros</span></li>
