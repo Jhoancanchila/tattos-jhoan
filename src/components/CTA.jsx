@@ -15,7 +15,7 @@ const CTA = () => {
         <source src={bannerVideo} type="video/mp4"/>
       </video>
       <div
-        className="relative z-10 h-full w-full bg-black/25 mx-auto max-w-screen px-4 py-32 sm:px-6 lg:flex lg:items-center lg:px-8"
+        className="relative z-10 h-full w-full bg-black/25 mx-auto max-w-screen px-4 py-32 sm:px-6 flex items-end lg:items-center lg:px-8"
       >
         <div className="ltr:sm:text-left rtl:sm:text-right">
           <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-5xl">Pregunta por nuestro servicio!</h2>

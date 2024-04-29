@@ -22,9 +22,9 @@ const Sidebar = () => {
           <span className="italic font-bold text-white text-4xl ">tattos <span>julia</span></span>
         </span>
         <ul>
-          <li onClick={() => handleMenu("ABOUT", sectionRefAbout)}><span className="link cursor-pointer">Nosotros</span></li>
-          <li onClick={() => handleMenu("TESTIMONIALS",sectionRefTest)}><span className="link cursor-pointer">Testimonios</span></li>
-          <li onClick={() => handleMenu("CONTACT",sectionRefContact)}><span className="link cursor-pointer">Contacto</span></li>
+          <li onClick={() => handleMenu("ABOUT", sectionRefAbout)}><span className={`${itemSelected === "ABOUT" ? "link active" : "link"} cursor-pointer`}>Nosotros</span></li>
+          <li onClick={() => handleMenu("TESTIMONIALS",sectionRefTest)}><span className={`${itemSelected === "TESTIMONIALS" ? "link active" : "link"} cursor-pointer`}>Testimonios</span></li>
+          <li onClick={() => handleMenu("CONTACT",sectionRefContact)}><span className={`${itemSelected === "CONTACT" ? "link active" : "link"} cursor-pointer`}>Contacto</span></li>
           <li>
             <button
               onClick={() => setOpenModal(true)}
