@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import { handleScroll } from "../../helpers/index";
 
 import "./ScrollButton.css"
+import { useReference } from "../../context/ref";
 
 const ScrollButton = () => {
+
+  const { setItemSelected } = useReference();
   const [ showScrollButton, setShowScrollButton ] = useState(false);
 
   useEffect(() => {
@@ -20,6 +23,7 @@ const ScrollButton = () => {
 
   const handleScrollToTop = () => {
     handleScroll();
+    setItemSelected("");
   };
 
   return (

@@ -11,7 +11,7 @@ const CTA = () => {
     <section
       className="relative bg-cover bg-center bg-no-repeat mt-12 h-screen overflow-hidden"
     >
-      <video autoPlay muted loop playsinline className="absolute object-cover top-0 left-0 w-full h-full">
+      <video autoPlay muted loop playsInline className="absolute object-cover top-0 left-0 w-full h-full">
         <source src={bannerVideo} type="video/mp4"/>
       </video>
       <div

@@ -1,7 +1,37 @@
+//Manejo de formularios
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+//Envío de email
+import { sendContact } from '../connect-api';
+import { useState } from 'react';
+import Error from './Error';
 
 
 const Contact = ({ sectionRef }) => {
+
+  const [ messageConfirmation, setMessageConfirmation ] = useState("");
+  const [ error, setError ] = useState(null);
+
+  const handleFormContact = async (values, resetForm) => {
+    try {
+      const newValueParse = {...values,phone: values.phone.toString()}
+      const response = await sendContact(newValueParse);
+
+      if(response.status !== 201){
+        setMessageConfirmation("Error enviando solicitud!!");
+        return new Error("Error enviando información");
+      }     
+      setMessageConfirmation("Solicitud enviada!!");
+      resetForm();
+      setTimeout(() => {
+        setMessageConfirmation("");
+      },2000)
+    } catch (error) {
+      setError(error);     
+    }
+  };
+
+  if(error) return <Error message="Enviando la solicitud."/>
+
   return (
 
     <section ref={sectionRef} className="bg-gray-100" >
@@ -41,8 +71,8 @@ const Contact = ({ sectionRef }) => {
                 }
                 return errors;
               }}
-              onSubmit={(values, { setSubmitting }) => {
-                console.log(values)
+              onSubmit={(values, { resetForm }) => {
+                handleFormContact(values, resetForm);
               }}
             >
               {
@@ -108,6 +138,7 @@ const Contact = ({ sectionRef }) => {
                       >
                         Enviar
                       </button>
+                      <span className='text-green-600 sm:text-xl text-base sm:ml-7 ml-2'>{messageConfirmation}</span>
                     </div>
                   </Form>
                 )

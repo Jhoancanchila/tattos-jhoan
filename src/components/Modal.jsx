@@ -1,10 +1,31 @@
 
-import { InlineWidget } from "react-calendly";
+import { InlineWidget, useCalendlyEventListener } from "react-calendly";
+import { getAppointment, getEventDate } from "../connect-api";
 const Modal = ({ onClose, isOpen }) => {
 
   const handleCloseModal = () => {
     onClose(false);
   };
+
+  //OBTENER DETALLES DE LA CITA DESDE FRONT
+  /* const fetchAppointment = async ( urlEvent, urlInvitee) => {
+    try {
+      const results = await Promise.all([getEventDate(urlEvent), getAppointment(urlInvitee)]);
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const handleSheduleAppointment =(dataAppointment) => {
+    const eventUri = dataAppointment.event.uri;
+    const inviteeUri = dataAppointment.invitee.uri;
+    fetchAppointment(eventUri,inviteeUri);
+  };
+
+  useCalendlyEventListener({
+    onEventScheduled: (e) => handleSheduleAppointment(e.data.payload),
+  }); */
+
 
   return (
     <>

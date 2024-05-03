@@ -1,4 +1,4 @@
-import { Fragment, useRef } from "react";
+import { Fragment, useRef, useState } from "react";
 import Layout from "./components/Layout";
 import About from "./components/About";
 import Testimonial from "./components/Testimonial";
@@ -10,13 +10,14 @@ import { RefContext } from "./context/ref";
 
 function App() {
 
+  const [ itemSelected, setItemSelected ] = useState("");
   const sectionRefAbout = useRef(null);
   const sectionRefTest = useRef(null);
   const sectionRefContact = useRef(null);
 
   return (
     <Fragment>
-      <RefContext.Provider value={{ sectionRefAbout, sectionRefTest, sectionRefContact }}>
+      <RefContext.Provider value={{ sectionRefAbout, sectionRefTest, sectionRefContact, itemSelected, setItemSelected }}>
         <Sidebar/>
         <CTA/>
         <Layout>
