@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# tattos-jhoan
+## Prerrequisitos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Git
+2. Node js 18.18.2 or later
 
-## Available Scripts
+## Configuración inicial
 
-In the project directory, you can run:
+1. Abrir en consola ubicación donde va alojar el repositorio
+2. `git clone https://github.com/Jhoancanchila/tattos-jhoan.git`
+3. `cd tattos-jhoan/`
+4. `npm install`
 
-### `npm start`
+## Configuración variables de entorno
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. `touch .env`
+2. Guardar en archivo .env los secret Keys
+3. Lanzar servidor: `npm run start`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Comandos Git
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. `git status` Muestra el estado de los archivos dentro del repositorio.
+2. `git add NombreArchivo` Agrega el archivo del Directorio al Staging Area.
+2. `git add -A` Agrega todos los archivos al Staging Area.
+3. `git commit -m "Mensaje"` Toma los archivos del Staging Area y realiza el commit.
+4. `git branch NombreRama` Crea una nueva rama para el proyecto.
+5. `git branch -l` Lista las ramas del proyecto.
+6. `git branch -D NombreRama` Elimina la rama del proyecto.
+7. `git branch -m NombreActualRama NuevoNombreRama` Renombra una rama.
+8. `git checkout NombreRama` Para moverse entre ramas.
+9. `git merge NombreRamaAUnir` Permite unir los commits de una rama a la rama en la que se encuentra.
+10. `git pull origin NombreRama` Descarga los cambios de GitHub.
+11. `git push origin NombreRama` Sube los cambios a GitHub.
