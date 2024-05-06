@@ -40,7 +40,7 @@ const Sidebar = () => {
     <Fragment>
       <nav>
         <span className="logo -rotate-6 z-10">
-          <span className={`${openSidebar ? 'text-white' : 'text-[#E11D48]'} italic font-bold text-4xl`}>tattos <span>Julia</span></span>
+          <span className={`${openSidebar ? 'text-white' : 'text-[#E11D48]'} italic font-bold text-4xl`}>tattoos <span>Julia</span></span>
         </span>
         <ul>
           <li onClick={() => handleMenu("ABOUT", sectionRefAbout)}><span className={`${itemSelected === "ABOUT" ? "link active" : "link"} cursor-pointer`}>Nosotros</span></li>
