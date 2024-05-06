@@ -63,7 +63,7 @@ const Contact = ({ sectionRef }) => {
                 } else if (
                   !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
                 ) {
-                  errors.email = 'Dirección de correo invalida';
+                  errors.email = 'Dirección de correo inválida';
                 }else if (!values.phone) {
                   errors.phone = 'Este campo es requerido';
                 }else if (!values.message) {
