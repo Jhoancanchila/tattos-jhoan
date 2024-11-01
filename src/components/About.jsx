@@ -6,7 +6,13 @@ import { useReference } from "../context/ref";
 
 const Description = ({ sectionRef }) => {
 
-  const { sectionRefContact } = useReference();
+  const { sectionRefContact, setItemSelected } = useReference();
+
+  const goToContact = ( selection, ref ) => {
+    handleScroll(ref);
+    setItemSelected(selection);
+  };
+
   return (
     <section ref={sectionRef}>
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
@@ -36,7 +42,7 @@ const Description = ({ sectionRef }) => {
                 <h3 className="text-xl font-medium text-white">Realistas</h3>
 
                 <button
-                  onClick={() => handleScroll(sectionRefContact)}
+                  onClick={() => goToContact("CONTACT",sectionRefContact)}
                   className="mt-1.5 inline-block bg-[#272425] px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
                 >
                   Contáctanos
@@ -57,7 +63,7 @@ const Description = ({ sectionRef }) => {
                 <h3 className="text-xl font-medium text-white">Tribales</h3>
 
                 <button
-                  onClick={() => handleScroll(sectionRefContact)}
+                  onClick={() => goToContact("CONTACT",sectionRefContact)}
                   className="mt-1.5 inline-block bg-[#272425] px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
                 >
                   Contáctanos
@@ -78,7 +84,7 @@ const Description = ({ sectionRef }) => {
                 <h3 className="text-xl font-medium text-white">Neotradicionales</h3>
 
                 <button
-                  onClick={() => handleScroll(sectionRefContact)}
+                  onClick={() => goToContact("CONTACT",sectionRefContact)}
                   className="mt-1.5 inline-block bg-[#272425] px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
                 >
                   Contáctanos
