@@ -58,7 +58,7 @@ const Testimonial = ({ sectionRef }) => {
     fetchTestimonials();
   }, []);
 
-  if(error) return <Error message="Cargando la información."/>
+  /* if(error) return <Error message="Cargando la información."/> */
 
   return (
     <section ref={sectionRef} className="bg-gray-50" >
